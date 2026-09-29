@@ -61,11 +61,11 @@
 			}
 		};
 		function download(bytes, filename) {
-			const a = document.createElement("a");
-			a.href = URL.createObjectURL(new Blob([bytes.toJs()]));
-			a.download = filename.replace(/\.[^.]+$/, "") + ".anim";
-			a.click();
-			print(a.download);
+    		const a = document.createElement("a");
+    		a.href = URL.createObjectURL(new Blob([bytes.toJs()], { type: "application/octet-stream" }));
+    		a.download = filename.replace(/\.[^.]+$/, "") + ".anim";
+    		a.click();
+    		print(a.download);
 		}
 	</script>
 </body>
