@@ -54,6 +54,7 @@
 				if (i === null || isNaN(idx)) continue;
 				download(pyodide.globals.get("main")(pyodide.toPy(buf), idx).get("data"), file.name);
 			} else if (result.get("status") === "Error") {
+				print(result.error);
 				continue;
 			} else {
 				download(result.get("data"), file.name);
